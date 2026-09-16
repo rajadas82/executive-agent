@@ -1,0 +1,135 @@
+{
+  "planning": {
+    "agent": "Planning Agent",
+    "asOf": "2026-05-28",
+    "projects": [
+      {
+        "name": "Phoenix ERP Migration",
+        "phase": "Phase 2 — Data Migration",
+        "scheduledEnd": "2026-07-15",
+        "forecastEnd": "2026-08-02",
+        "slippageDays": 18,
+        "criticalPath": ["Data mapping complete", "UAT sign-off", "Go-live cutover"],
+        "blockers": ["Legacy schema mapping 40% behind schedule", "3rd-party vendor API documentation incomplete"]
+      },
+      {
+        "name": "Claims Portal Modernization",
+        "phase": "Phase 1 — UI Build",
+        "scheduledEnd": "2026-06-30",
+        "forecastEnd": "2026-07-05",
+        "slippageDays": 5,
+        "criticalPath": ["Design system sign-off", "Component library handoff", "QA cycle 1"],
+        "blockers": []
+      },
+      {
+        "name": "Data Platform Uplift",
+        "phase": "Infra Setup",
+        "scheduledEnd": "2026-06-15",
+        "forecastEnd": "2026-06-15",
+        "slippageDays": 0,
+        "criticalPath": ["Cluster provisioning", "Pipeline config", "Smoke testing"],
+        "blockers": []
+      }
+    ]
+  },
+  "risk": {
+    "agent": "Risk Agent",
+    "asOf": "2026-05-28",
+    "flags": [
+      {
+        "project": "Phoenix ERP Migration",
+        "signal": "velocity_drop",
+        "severity": "HIGH",
+        "confidence": 0.91,
+        "detail": "Sprint velocity down 34% over 3 consecutive sprints (42 → 28 pts). Sprint 8 milestone at risk.",
+        "recommendedAction": "Escalate to PM. Re-scope sprint 8 scope. Assess team capacity."
+      },
+      {
+        "project": "Claims Portal Modernization",
+        "signal": "scope_creep",
+        "severity": "MEDIUM",
+        "confidence": 0.84,
+        "detail": "14 unplanned stories added post-commit. Unplanned work ratio 31% vs 15% threshold.",
+        "recommendedAction": "Freeze backlog additions. Hold scope review with PO before sprint 6."
+      },
+      {
+        "project": "Data Platform Uplift",
+        "signal": "resource_conflict",
+        "severity": "LOW",
+        "confidence": 0.67,
+        "detail": "Lead architect at 110% allocation. Monitor next sprint.",
+        "recommendedAction": "Flag to resource manager. No immediate action needed."
+      }
+    ]
+  },
+  "financial": {
+    "agent": "Financial Agent",
+    "asOf": "2026-05-28",
+    "portfolioCapex": 9200000,
+    "ytdSpend": 4100000,
+    "ytdBudget": 3800000,
+    "variancePct": 7.9,
+    "projects": [
+      {
+        "name": "Phoenix ERP Migration",
+        "approved": 3200000,
+        "actual": 2900000,
+        "forecast": 3850000,
+        "status": "OVER",
+        "note": "Forecast 20% over approved. Additional vendor costs and extended timeline driving overage."
+      },
+      {
+        "name": "Claims Portal Modernization",
+        "approved": 1800000,
+        "actual": 680000,
+        "forecast": 1780000,
+        "status": "ON_TRACK",
+        "note": "Tracking within budget. No concerns."
+      },
+      {
+        "name": "Data Platform Uplift",
+        "approved": 2400000,
+        "actual": 520000,
+        "forecast": 2350000,
+        "status": "ON_TRACK",
+        "note": "Early stage, spend as expected."
+      }
+    ]
+  },
+  "engineering": {
+    "agent": "Engineering Agent",
+    "asOf": "2026-05-28",
+    "projects": [
+      {
+        "name": "Phoenix ERP Migration",
+        "sprintHealth": "RED",
+        "velocity": 28,
+        "velocityTarget": 42,
+        "openDefects": 34,
+        "criticalDefects": 6,
+        "deployFreq": "bi-weekly",
+        "note": "6 critical defects open. Test coverage dropped to 61%. Defect injection rate rising."
+      },
+      {
+        "name": "Claims Portal Modernization",
+        "sprintHealth": "AMBER",
+        "velocity": 38,
+        "velocityTarget": 40,
+        "openDefects": 8,
+        "criticalDefects": 0,
+        "deployFreq": "weekly",
+        "note": "Minor velocity dip. No critical defects. Code quality metrics stable."
+      },
+      {
+        "name": "Data Platform Uplift",
+        "sprintHealth": "GREEN",
+        "velocity": 35,
+        "velocityTarget": 32,
+        "openDefects": 2,
+        "criticalDefects": 0,
+        "deployFreq": "weekly",
+        "note": "Ahead of velocity target. Strong engineering health."
+      }
+    ]
+  }
+}
